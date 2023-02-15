@@ -1,0 +1,1 @@
+addSbtPlugin("com.47deg"       % "sbt-microsites"        % "1.3.4+5-aaf190d3-SNAPSHOT")
