@@ -1,4 +1,4 @@
-val scala3Version = "2.11.12"
+val scala2Version = "2.12.16"
 
 lazy val root = project
   .in(file("."))
@@ -6,18 +6,18 @@ lazy val root = project
     name := "microsite-test",
     version := "0.1.0-SNAPSHOT",
 
-    scalaVersion := scala3Version,
+    scalaVersion := scala2Version,
   )
   .settings(
     micrositeName := "Bellman",
     micrositeDescription := "Efficiently running SPARQL queries in Spark",
-    micrositeGithubOwner := "TomyMeren",
+    micrositeGithubOwner := "gsk-tech",
     micrositeGithubRepo := "bellman",
-    micrositeGitHostingUrl := "https://github.com/TomyMeren/bellman",
+    micrositeGitHostingService := GitHub,
+    micrositeGitHostingUrl := "https://mygithub.gsk.com/gsk-tech/bellman",
     micrositeBaseUrl := "/bellman",
     micrositePushSiteWith := GitHub4s,
     mdocIn := (Compile / sourceDirectory).value / "docs",
     micrositeGithubToken := Option(System.getenv().get("GITHUB_TOKEN")),
-
   )
   .enablePlugins(MicrositesPlugin)
